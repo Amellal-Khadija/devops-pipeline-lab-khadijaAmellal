@@ -1,15 +1,29 @@
 {
   "name": "devops-pipeline-lab-khadija",
   "version": "0.1.0",
-  "description": "Sample Node.js application for pipeline lab",
+  "description": "Sample Node.js application for DevOps pipeline lab",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "jest"
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "lint": "eslint src tests",
+    "lint:fix": "eslint src tests --fix"
   },
   "devDependencies": {
+    "eslint": "^8.50.0",
     "jest": "^29.6.1"
   },
-  "author": "Khadija",
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  },
+  "author": "Khadija Amellal",
   "license": "MIT"
 }
